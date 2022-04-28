@@ -25,6 +25,7 @@ def Levywalk(nt):
     return [[x[i], y[i]] for i in range(nt)]
 
 def Circle(nt):
+    # for test
     theta = [2*math.pi*(i/nt) for i in range(nt)]
     x = [math.cos(i) for i in theta]
     y = [math.sin(i) for i in theta]
@@ -156,7 +157,7 @@ y_hat = 0
 
 I_net = np.zeros(N) #(11)式によれば、(13)で決まる結合行列とrを用いて各ニューロンへの入力が計算されるのですが、これをそのまま実装すると非常に計算時間が長くなります。そこで、(13)式から決まる入力を二つの項に分解して計算します。第二項とrの積は、x_hatを用いて計算できることに注意してください。ここでのI_netは、第一項から決まる入力としておきます。
 
-#以下のh,r,hr,h_updataは、各ニューロンへの入力と、学習の際に使う重み付きの入力の計算に使います。これは少しややこしいので、よくわからなければいつでも聞いてください
+#以下のh,r,hr,h_updataは、各ニューロンへの入力と、学習の際に使う重み付きの入力の計算に使います。
 h = np.zeros(N)
 r = np.zeros(N)
 hr = np.zeros(N)
@@ -270,8 +271,3 @@ plt.savefig("IzCH_post.pdf", dpi=350,bbox_inches="tight", pad_inches=0.0)
 
 plot(dt=dt,span=span)
 #%%
-    
-# plot(dt=0.04)
-#%%
-# plot(dt=0.04,span=20000)
-# %%
